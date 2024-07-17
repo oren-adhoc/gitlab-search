@@ -1,0 +1,8 @@
+services:
+  gitlab-search:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PRIVATE_GITLAB_TOKEN_RO
+        - GITLAB_HOST

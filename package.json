@@ -3,7 +3,7 @@
   "version": "1.5.0",
   "scripts": {
     "build": "rimraf dist && bsb -make-world && ncc build lib/js/src/Main.bs.js --out dist",
-    "start": "bsb -make-world -w",
+    "start": "bsb -make-world",
     "clean": "bsb -clean-world",
     "prepublish": "npm run build"
   },
