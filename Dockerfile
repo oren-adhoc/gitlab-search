@@ -1,12 +1,7 @@
 FROM node:14.21.3
 
-ARG PRIVATE_GITLAB_TOKEN_RO
-ARG GITLAB_HOST
-ENV PRIVATE_GITLAB_TOKEN_RO=${PRIVATE_GITLAB_TOKEN_RO}
-ENV GITLAB_HOST=${GITLAB_HOST}
-
 WORKDIR /usr/src/app
 COPY . .
 
-RUN npm ci && npm run build
-RUN gitlab-search setup --api-domain ${GITLAB_HOST} ${PRIVATE_GITLAB_TOKEN_RO}
+RUN npm ci
+ENTRYPOINT [ "bash" ]
